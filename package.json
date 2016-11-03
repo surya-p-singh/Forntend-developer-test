@@ -28,6 +28,8 @@
   "dependencies": {
     "axios": "^0.15.2",
     "babel-preset-stage-1": "^6.1.18",
+    "es6-promise": "^4.0.5",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",

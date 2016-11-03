@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import service from './ServiceReducers';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+      service
 });
 
 export default rootReducer;

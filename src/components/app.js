@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import SearchTrains from './searchTrains';
+import ServiceContainer from '../containers/ServiceContainer';
 
 export default class App extends Component {
   render() {
     return (
-      <SearchTrains></SearchTrains>
+      <ServiceContainer></ServiceContainer>
     );
   }
 }
