@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { configureStore } from './store/configureStore';
 
-import App from './components/app';
-import reducers from './reducers';
+import DepartureService from './containers/DepartureService';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const store = configureStore();
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+ReactDOM.render((
+    <Provider store={ store }>
+        <Router history={ browserHistory }>
+            <Route path="/" component={ DepartureService }>
+
+            </Route>
+
+        </Router>
+    </Provider>
+), document.querySelector('.container'));

@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import service from './ServiceReducers';
+import DepartureServiceReducer from './DepartureServiceReducer';
 
-const rootReducer = combineReducers({
-      service
+export default combineReducers({
+    DepartureServiceReducer
 });
-
-export default rootReducer;

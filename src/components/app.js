@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ServiceContainer from '../containers/ServiceContainer';
+import DepartureService from '../containers/DepartureService';
 
 export default class App extends Component {
   render() {
     return (
-      <ServiceContainer></ServiceContainer>
+      <DepartureService></DepartureService>
     );
   }
 }
