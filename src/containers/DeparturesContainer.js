@@ -10,10 +10,7 @@ class DeparturesContainer extends Component{
     }
 
     fetchData(){
-
-        this.props.actions.fetchDepartureDetails();
-        const { services } = this.props;
-        //console.log('this.props.services:', this.props.services)
+        this.props.actions.fetchDepartures();
         clearTimeout(this.timer);
         this.timer = setTimeout(this.fetchData.bind(this), 10000);
     }
@@ -23,8 +20,18 @@ class DeparturesContainer extends Component{
     }
 
     render(){
+        const { services, disruptionMessages } = this.props;
+
         return(
-            <div> {this.props.services} data</div>
+            <div>
+                { disruptionMessages && disruptionMessages.length && <div className="col-xs-12">
+                    <div className="service-disruptions">
+                        <ul className="list-unstyled">
+                            <li className="is-first">{ disruptionMessages[0].message } </li>
+                        </ul>
+                    </div>
+                </div> }
+            </div>
         )
     }
 }
@@ -32,6 +39,7 @@ class DeparturesContainer extends Component{
 function mapStateToProps(state) {
     return {
         services: state.departures.services,
+        disruptionMessages: state.departures.disruptionMessages
     }
 }
 
