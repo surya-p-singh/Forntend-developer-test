@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import departures from './DepartureServiceReducer';
+import departures from './DeparturesReducer';
 
 export default combineReducers({
     departures

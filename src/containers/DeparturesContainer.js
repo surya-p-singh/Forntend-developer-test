@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import * as DeparuteServiceAction from '../actions/DepartureServiceAction';
+import * as DeparturesAction from '../actions/DeparturesAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
-class DepartureService extends Component{
+class DeparturesContainer extends Component{
 
     constructor(props) {
         super(props);
@@ -12,9 +12,8 @@ class DepartureService extends Component{
     fetchData(){
 
         this.props.actions.fetchDepartureDetails();
-        console.log('this.props.services:', this.props.services)
-        //this.props.disptach(DeparuteServiceAction.fetchDepartureDetails());
-        //dispatch(DeparuteServiceAction.fetchDepartureDetails());
+        const { services } = this.props;
+        //console.log('this.props.services:', this.props.services)
         clearTimeout(this.timer);
         this.timer = setTimeout(this.fetchData.bind(this), 10000);
     }
@@ -28,14 +27,9 @@ class DepartureService extends Component{
             <div> {this.props.services} data</div>
         )
     }
-
-
 }
 
 function mapStateToProps(state) {
-    console.log('mapStateToProps')
-    console.log('state.departures.services:',state.departures.services)
-
     return {
         services: state.departures.services,
     }
@@ -43,9 +37,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(DeparuteServiceAction, dispatch)
+        actions: bindActionCreators(DeparturesAction, dispatch)
     }
-
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DepartureService)
+export default connect(mapStateToProps, mapDispatchToProps)(DeparturesContainer)
