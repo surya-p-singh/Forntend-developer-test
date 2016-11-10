@@ -1,11 +1,14 @@
-
+import TYPES from '../constants/actionTypes';
 
 export default function(state = {}, action){
     console.log('type:', action.type);
-    console.log('payload:', action.payload);
+    console.log('action.services:', action.services);
     switch (action.type){
-        case "SERVICE":
-            return action.payload
+        case TYPES.DEPARTURES.FETCHED:
+            return {
+                ...state,
+                services: action.services
+            };
         default :
             return state;
     }

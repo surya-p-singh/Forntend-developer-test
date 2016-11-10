@@ -8,11 +8,11 @@ class DepartureService extends Component{
     constructor(props) {
         super(props);
     }
-    
+
     fetchData(){
-        console.log('calling')
-        console.log('serviceProvider', this.props.serviceProvider)
+
         this.props.actions.fetchDepartureDetails();
+        console.log('this.props.services:', this.props.services)
         //this.props.disptach(DeparuteServiceAction.fetchDepartureDetails());
         //dispatch(DeparuteServiceAction.fetchDepartureDetails());
         clearTimeout(this.timer);
@@ -22,29 +22,22 @@ class DepartureService extends Component{
     componentDidMount(){
         this.fetchData();
     }
-    
 
     render(){
         return(
-            <div> {this.props.serviceProvider} data</div>
+            <div> {this.props.services} data</div>
         )
     }
 
 
 }
 
-/*function mapStateToProps(state) {
-    console.log('mapStateToProps')
-    console.log('prosssss',this.state)
-
-    return {
-        serviceProvider: state.serviceProvider,
-    }
-}*/
-
 function mapStateToProps(state) {
+    console.log('mapStateToProps')
+    console.log('state.departures.services:',state.departures.services)
+
     return {
-        serviceProvider: state.serviceProvider,
+        services: state.departures.services,
     }
 }
 

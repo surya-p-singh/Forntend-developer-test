@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import DepartureServiceReducer from './DepartureServiceReducer';
+import departures from './DepartureServiceReducer';
 
 export default combineReducers({
-    DepartureServiceReducer
+    departures
 });

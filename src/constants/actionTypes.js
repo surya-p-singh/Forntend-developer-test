@@ -1,5 +1,11 @@
 export default {
 
+    DEPARTURES: {
+        FETCHING: 'DEPARTURES_FETCHING',
+        FETCHED: 'DEPARTURES_FETCHED',
+        FETCH_ERROR: 'DEPARTURES_FETCH_ERROR'
+    },
+    
     SERVICE: {
         FETCHING: 'SERVICE_FETCHING',
         FETCHED : 'SERVICE_FETCHED',
