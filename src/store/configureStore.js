@@ -1,6 +1,6 @@
 import thunkMiddleware from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
-import RootReducer from '../reducers/index';
+import RootReducer from '../reducers/RootReducer';
 
 export function configureStore(initialState) {
     let middlewares = [thunkMiddleware];

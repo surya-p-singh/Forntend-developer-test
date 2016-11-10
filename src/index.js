@@ -4,7 +4,7 @@ import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 import { configureStore } from './store/configureStore';
 
-import DepartureService from './containers/DepartureService';
+import DepartureService from './containers/DepartureContainer';
 
 const store = configureStore();
 

@@ -5,6 +5,10 @@ import { bindActionCreators } from 'redux'
 
 class DepartureService extends Component{
 
+    constructor(props) {
+        super(props);
+    }
+    
     fetchData(){
         console.log('calling')
         console.log('serviceProvider', this.props.serviceProvider)

@@ -1,8 +1,8 @@
 
 
 export default function(state = {}, action){
-
-    console.log('action', action.type);
+    console.log('type:', action.type);
+    console.log('payload:', action.payload);
     switch (action.type){
         case "SERVICE":
             return action.payload
