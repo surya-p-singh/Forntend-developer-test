@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import * as DeparturesAction from '../actions/DeparturesAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
+import ServiceList from '../components/ServicesList';
 
 class DeparturesContainer extends Component{
 
@@ -31,6 +32,10 @@ class DeparturesContainer extends Component{
                         </ul>
                     </div>
                 </div> }
+                <div>
+                    { services &&  <ServiceList services={ services } /> }
+                </div>
+
             </div>
         )
     }
