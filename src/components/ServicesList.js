@@ -1,25 +1,14 @@
-
 import React, {Component} from 'react';
+import Service from '../components/Service';
 
 export default class ServiceList extends Component {
 
-    renderServices(){
-        const { services} = this.props;
-        
-        return services.map((service) => {
-            return (
-                <li key={service.serviceIdentifier}>{service.serviceIdentifier}
-                </li>
-            );
-        })
-    }
-    
     render(){
-        
-        return(
-            <ui>
-                {this.renderServices()}
-            </ui>
+        const { services } = this.props;
+        return (
+            <ul>
+                { services.map((service,key) =>  <Service key={key} service={service} />)}
+            </ul>
         )
     }
 }
