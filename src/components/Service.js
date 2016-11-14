@@ -20,9 +20,10 @@ export default class Service extends Component {
 
        let { realTimePlatform, realTimeFlag, cancelled } =  (realTimeUpdatesInfo || {}).realTimeServiceInfo;
 
+        const serviceDetailsUrl = callingPatternUrl.match(`${serviceIdentifier}(.*)`)[0]; // e.g. W93605/2016-10-19
         return(
             <li>
-                <Link to={'/' + callingPatternUrl}>
+                <Link to={'/' + serviceDetailsUrl}>
                     <div>
                         <span>{moment(scheduledInfo.scheduledTime).format('HH:mm')} </span>
                         <span>{serviceOperator} </span>
