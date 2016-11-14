@@ -13,7 +13,7 @@ ReactDOM.render((
     <Provider store={ store }>
         <Router history={ browserHistory }>
             <Route path="/" component={ DepartureService }>
-                <Route path="**" component={TrainCallingPoint} />
+                <Route path='**' component={ TrainCallingPoint } />
             </Route>
 
         </Router>

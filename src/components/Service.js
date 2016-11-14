@@ -52,6 +52,7 @@ export default class Service extends Component {
                         <span>{serviceOperator} </span>
                         { realTimeFlag && <Expected realTimeFlag={realTimeFlag} expectedTime={expectedTime} />}
                     </div>
+
                 </Link>
             </li>
         );

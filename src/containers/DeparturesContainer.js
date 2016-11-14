@@ -21,7 +21,7 @@ class DeparturesContainer extends Component{
     }
 
     render(){
-        const { services, disruptionMessages } = this.props;
+        const { services, disruptionMessages, children } = this.props;
 
         return(
             <div>
@@ -35,7 +35,7 @@ class DeparturesContainer extends Component{
                 <div>
                     { services &&  <ServiceList services={ services } /> }
                 </div>
-
+                 { children }
             </div>
         )
     }
