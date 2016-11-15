@@ -2,7 +2,6 @@ import fetch from 'isomorphic-fetch';
 import TYPES from '../constants/actionTypes';
 import ENDPOINTS from '../constants/endpoints';
 
-
 function sanitiseData(services){
     return services.filter(service => service.transportMode !== 'BUS');
 }

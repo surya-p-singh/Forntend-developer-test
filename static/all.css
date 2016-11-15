@@ -1,5 +1,47 @@
-.services {
 
-    list-style: none;
 
+li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent
+}
+
+a:active,a:hover {
+    outline: 0
+}
+
+.service-disruptions {
+    position: relative;
+    margin-bottom: 1em;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #2d3039
+}
+
+.service-disruptions .is-first:before {
+    content: 'LATEST';
+    background: #fc5a63;
+    color: #fff;
+    padding: 2px;
+    font-size: 70%;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.service-disruptions .list-unstyled {
+    margin-bottom: 0
+}
+
+.contents {
+    z-index: 3
+}
+
+.contents .content {
+    position: relative;
+    margin-bottom: 100px;
+    height: auto
 }

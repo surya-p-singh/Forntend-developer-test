@@ -13,7 +13,7 @@ class TrainCallingPointContainer extends  Component{
 
     fetchService() {
 
-        //console.log('params.splat :',this.props.params.splat )
+        // TODO: Read abt params and params.splat
         const {  params } = this.props;
         this.props.actions.fetchTrainCallingPoints(params.splat );
         clearTimeout(this.timer);
@@ -24,6 +24,7 @@ class TrainCallingPointContainer extends  Component{
         this.fetchService();
     }
 
+    // TODO: Why did we use this?
     componentDidUpdate(prevProps) {
         const { params } = this.props;
 
@@ -35,8 +36,9 @@ class TrainCallingPointContainer extends  Component{
     }
 
     render(){
+
         const { service } = this.props;
-        //console.log('service:', service);
+        console.log('service:', service);
         return (
             <div className="col-xs-12 col-sm-6">
                     {service &&  <div>{ service.serviceUid }</div> }
