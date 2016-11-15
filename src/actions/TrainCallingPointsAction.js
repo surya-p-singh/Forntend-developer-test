@@ -14,6 +14,7 @@ export function fetchTrainCallingPoints(url) {
         return fetch(ENDPOINTS.service(url))
             .then(response => response.json())
             .then (response => {
+                //console.log('response.service:', response.service);
                 return dispatch ({
                     type: TYPES.SERVICE.FETCHED,
                     service: response.service

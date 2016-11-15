@@ -36,9 +36,11 @@ class TrainCallingPointContainer extends  Component{
 
     render(){
         const { service } = this.props;
-
+        //console.log('service:', service);
         return (
-            <div>{service}</div>
+            <div className="col-xs-12 col-sm-6">
+                    {service &&  <div>{ service.serviceUid }</div> }
+           </div>
         )
     }
 }
