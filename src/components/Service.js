@@ -33,12 +33,24 @@ const Expected = ({realTimeFlag, expectedTime}) => {
 export default class Service extends Component {
 
     render(){
-            const { service } = this.props;
-            const { realTimeUpdatesInfo, scheduledInfo, serviceOperator, destinationList, serviceIdentifier, callingPatternUrl } = service;
-            const { time } = moment (scheduledInfo.scheduledTime);
-    
-            let { realTime, realTimePlatform, realTimeFlag, cancelled } =  (realTimeUpdatesInfo || {}).realTimeServiceInfo;
-            const expectedTime = moment(time).isBefore(realTime) ? moment(realTime) : null;
+
+        const { service, params } = this.props;
+        const { realTimeUpdatesInfo, scheduledInfo, serviceOperator, destinationList, serviceIdentifier, callingPatternUrl } = service;
+        const time = moment(scheduledInfo.scheduledTime);
+
+        let realTimeServiceInfo = (realTimeUpdatesInfo || {}).realTimeServiceInfo;
+
+        let realTime, realTimePlatform, realTimeFlag, cancelled, expectedTime = [,,,,];
+
+        if(realTimeServiceInfo) {
+            ({realTime, realTimePlatform, realTimeFlag, cancelled} = realTimeServiceInfo);
+
+            realTimeFlag = cancelled && cancelled.isCancelled ? 'Cancelled' : realTimeFlag;
+            expectedTime = time.isBefore(realTime) ? moment(realTime) : null;
+        }
+
+
+
             const serviceDetailsUrl = callingPatternUrl.match(`${serviceIdentifier}(.*)`)[0]; // e.g. W93605/2016-10-19
         return(
             <li>
