@@ -13,6 +13,7 @@ class TrainCallingPointContainer extends  Component{
 
     fetchService() {
 
+        //console.log('params.splat :',this.props.params.splat )
         const {  params } = this.props;
         this.props.actions.fetchTrainCallingPoints(params.splat );
         clearTimeout(this.timer);
@@ -23,9 +24,18 @@ class TrainCallingPointContainer extends  Component{
         this.fetchService();
     }
 
-    render(){
+    componentDidUpdate(prevProps) {
+        const { params } = this.props;
 
-        const { service, params } = this.props;
+        if (params.splat !== prevProps.params.splat) {
+            // Fetch new data if route has changed
+            // See Abramov's technique: https://egghead.io/lessons/javascript-redux-fetching-data-on-route-change
+            this.fetchService();
+        }
+    }
+
+    render(){
+        const { service } = this.props;
 
         return (
             <div>{service}</div>

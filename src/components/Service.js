@@ -33,7 +33,6 @@ const Expected = ({realTimeFlag, expectedTime}) => {
 export default class Service extends Component {
 
     render(){
-
         const { service, params } = this.props;
         const { realTimeUpdatesInfo, scheduledInfo, serviceOperator, destinationList, serviceIdentifier, callingPatternUrl } = service;
         const time = moment(scheduledInfo.scheduledTime);
@@ -50,8 +49,7 @@ export default class Service extends Component {
         }
 
 
-
-            const serviceDetailsUrl = callingPatternUrl.match(`${serviceIdentifier}(.*)`)[0]; // e.g. W93605/2016-10-19
+        const serviceDetailsUrl = callingPatternUrl.match(`${serviceIdentifier}(.*)`)[0]; // e.g. W93605/2016-10-19
         return(
             <li>
                 <Link to={'/' + serviceDetailsUrl}>

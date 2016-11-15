@@ -11,7 +11,7 @@ export function fetchTrainCallingPoints(url) {
         //Why this
         dispatch({ type: TYPES.SERVICE.FETCHING });
 
-        return fetch(url)
+        return fetch(ENDPOINTS.service(url))
             .then(response => response.json())
             .then (response => {
                 return dispatch ({
