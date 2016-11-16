@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 import * as TrainCallingPointsAction from '../actions/TrainCallingPointsAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-
+import Stops from '../components/Stops';
 
 class TrainCallingPointContainer extends  Component{
 
@@ -38,10 +38,13 @@ class TrainCallingPointContainer extends  Component{
     render(){
 
         const { service } = this.props;
-        console.log('service:', service);
+        //console.log('service in base:', service);
         return (
             <div className="col-xs-12 col-sm-6">
-                    {service &&  <div>{ service.serviceUid }</div> }
+                    {service &&  <div>
+                        <Stops service={service} />
+                        </div>
+                    }
            </div>
         )
     }
