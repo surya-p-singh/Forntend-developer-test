@@ -19,26 +19,16 @@
     transform: translateZ(0)
 }
 
-
-
-
-
-
-
-li {
-    list-style-type: none;
+.service-link {
+    color:initial;
+    display: block;
+    padding:  10px 35px 10px 15px;
     text-decoration: none;
-    border: 1px;
-    padding: 10px;
 }
 
-a {text-decoration: none; }
-
-.content .content-container {
-    padding: 15px
+.service-link:focus,.services .service-link:hover {
+    text-decoration: none
 }
-
-
 
 .calling-points .calling-point {
     list-style: none;
@@ -47,25 +37,6 @@ a {text-decoration: none; }
     position: relative
 }
 
-.service-link {
-    color: initial;
-    display: block;
-    padding: 10px 35px 10px 15px;
-    text-decoration: none;
-}
-
-.service-link:focus,.services .service-link:hover {
-    text-decoration: none
-}
-
-.service-disruptions {
-    position: relative;
-    margin-bottom: 1em;
-    padding: 10px;
-    border: 1px solid #666;
-    border-radius: 5px;
-    color: #2d3039
-}
 
 .service-disruptions .is-first:before {
     content: 'LATEST';
@@ -91,23 +62,9 @@ a {text-decoration: none; }
     height: auto
 }
 
-.departures{
-    overflow:scroll;
-    height:700px;
-    width: 300px;
-}
-
 .operator {
     color: #8c9190
 }
 
-.scheduled-time {
-    font-weight: 700;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: Circular,ArialMT,Arial,sans-serif;
-    letter-spacing: -.05px;
-    font-size: 18px
-}
+
 
