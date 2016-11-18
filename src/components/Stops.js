@@ -9,9 +9,9 @@ export default class Stops extends Component {
         //console.log('service:', service);
         const {stops} = service;
         return(
-            <ui>
+            <ul className="calling-points">
                 {stops.map( (stop,key) => <Stop key= {key} stop={stop} />)}
-            </ui>
+            </ul>
         )
     }
 }

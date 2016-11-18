@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
 
-
+const ScheduledTime = ({ time }) => <span >{ time.format('HH:mm') }</span>;
 const DestinationList = ({destinationList}) =>  <span> { destinationList.map(destination => destination.crs ).join(' / ') } </span>
 const Platform = ({platform}) => {
     if(platform){
-        return <span><span>Plat. </span><span>{platform}</span></span>
+        return <span><span  className="platform"><abbr title="Platform">Plat.</abbr> </span><span>{platform}</span></span>
     }
     else {
         return <span><span>-</span></span>
@@ -51,15 +51,15 @@ export default class Service extends Component {
 
         const serviceDetailsUrl = callingPatternUrl.match(`${serviceIdentifier}(.*)`)[0]; // e.g. W93605/2016-10-19
         return(
-            <li>
-                <Link to={'/' + serviceDetailsUrl}>
+            <li className="service">
+                <Link to={'/' + serviceDetailsUrl} className="service-link" rel="nofollow">
                     <div>
-                        <span>{moment(scheduledInfo.scheduledTime).format('HH:mm')} </span>
+                        <ScheduledTime time={ time } />
                         <DestinationList  destinationList={ destinationList } />
                         <Platform platform={realTimePlatform} />
                     </div>
                     <div>
-                        <span>{serviceOperator} </span>
+                        <span className="operator">{serviceOperator} </span>
                         { realTimeFlag && <Expected realTimeFlag={realTimeFlag} expectedTime={expectedTime} />}
                     </div>
 

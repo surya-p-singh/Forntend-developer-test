@@ -32,8 +32,14 @@ class DeparturesContainer extends Component{
                         </ul>
                     </div>
                 </div> }
-                <div className="contents col-xs-12 col-sm-6">
-                    { services &&  <ServiceList services={ services } /> }
+                <div className="col-xs-12 col-lg-8">
+
+                        <div >
+                            <div>
+                                { services &&  <ServiceList services={ services } /> }
+                            </div>
+                        </div>
+                    
                 </div>
                  { children }
             </div>
